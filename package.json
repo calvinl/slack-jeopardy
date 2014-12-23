@@ -1,0 +1,29 @@
+{
+  "name": "jeopardy",
+  "version": "0.0.1",
+  "description": "Jeopardy for Wunwuns.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wunwun/slack-jeopardy.git"
+  },
+  "keywords": [
+    "jeopardy",
+    "slack"
+  ],
+  "author": "Calvin Lai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wunwun/slack-jeopardy/issues"
+  },
+  "homepage": "https://github.com/wunwun/slack-jeopardy",
+  "dependencies": {
+    "body-parser": "^1.10.0",
+    "express": "^4.10.6",
+    "parameterize": "0.0.7",
+    "request": "^2.51.0"
+  }
+}
