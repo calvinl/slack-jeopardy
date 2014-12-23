@@ -13,14 +13,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // define routes
-router.get('/', function(req, res) {
-  var q = req.query;
-  var params = q.text.split(" ");
+router.post('/', function(req, res) {
+  var q = req.body;
+  var params = q.trigger_word ? q.text.split(" ").slice(1) : q.text.split(" ");
   var random = (params[0] == 'random');
   var command = typeof (params[1] + params[2]) == 'string' && (params[1] + params[2]).replace(/\s/g, "").toLowerCase();
   var isAnswer = isNumber(params[0]) && (command == 'whatis' || command == 'whatare' || command == 'whois' || command == 'whoare');
   var answer = params.slice(3).join(" ");
   var clueId;
+
+  console.log(params);
+  console.log(q);
 
   if (isAnswer) {
     clueId = parseInt(params[0]);
@@ -91,7 +94,7 @@ router.get('/', function(req, res) {
                   },
                   {
                     title: "To answer, type:",
-                    value: "/alex " + clue.id + " what is ..."
+                    value: "trebek " + clue.id + " what is ..."
                   }
                 ]
               }
